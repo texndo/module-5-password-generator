@@ -116,9 +116,6 @@ function getRandom(arr) {
   return arr[randIndex];
 }
 
-var myArray = [1,2,3,4,5];
-var randomElement = getRandom(myArray);
-console.log (randomElement);
 
 //* Function to generate password with user input *\\
 function generatePassword() {
@@ -141,10 +138,6 @@ function generatePassword() {
 
     return password;
 }
-
-var newPassword = generatePassword();
-console.log(newPassword);
-
 //* Get references to the #generate element *\\
 var generateBtn = document.querySelector('#generate');
 
