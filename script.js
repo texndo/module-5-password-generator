@@ -88,25 +88,42 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
+//* Function to prompt user for password options *\\
 function getPasswordOptions() {
+  var options = {};
+  var length = parseInt(
+    prompt('Enter the length of the password (between 8 and 128 characters):"')
+  );
+  while (isNaN(length) || length < 8 || length > 128) {
+    length = parseInt(prompt(' Invalid input! Please enter a valid length between 8 and 128:'));
+  }
+  options.length = length;
+  options.includeLowercase = confirm('Include lowercase letters?');
+  options.includeUppercase = confirm('Include uppercase letters?');
+  options.includeNumbers = confirm('Include numbers?');
+  options.includeSpecialCharacters = confirm('Include special characters?');
 
+  return options;
 }
 
-// Function for getting a random element from an array
+var passwordOptions = getPasswordOptions();
+console.log(passwordOptions);
+
+
+//* Function for getting a random element from an array *\\
 function getRandom(arr) {
-
+  
 }
 
-// Function to generate password with user input
+//* Function to generate password with user input *\\
 function generatePassword() {
 
 }
 
-// Get references to the #generate element
+//* Get references to the #generate element *\\
 var generateBtn = document.querySelector('#generate');
 
-// Write password to the #password input
+//* Write password to the #password input *\\
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
@@ -114,5 +131,5 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+//* Add event listener to generate button *\\
 generateBtn.addEventListener('click', writePassword);
