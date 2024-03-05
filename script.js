@@ -112,13 +112,38 @@ console.log(passwordOptions);
 
 //* Function for getting a random element from an array *\\
 function getRandom(arr) {
-  
+  var randIndex = Math.floor(Math.random() * arr.length);
+  return arr[randIndex];
 }
+
+var myArray = [1,2,3,4,5];
+var randomElement = getRandom(myArray);
+console.log (randomElement);
 
 //* Function to generate password with user input *\\
 function generatePassword() {
+  var options = getPasswordOptions();
 
+    var lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+    var uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var numberChars = '0123456789';
+    var specialChars = '!@#$%^&*()-_+=~`[]{}|;:,.<>?';
+    var password = '';
+    var charPool = '';
+    if (options.includeLowercase) charPool += lowercaseChars;
+    if (options.includeUppercase) charPool += uppercaseChars;
+    if (options.includeNumbers) charPool += numberChars;
+    if (options.includeSpecialChars) charPool += specialChars;
+
+    for (var i = 0; i < options.length; i++) {
+        password += getRandom(charPool);
+    }
+
+    return password;
 }
+
+var newPassword = generatePassword();
+console.log(newPassword);
 
 //* Get references to the #generate element *\\
 var generateBtn = document.querySelector('#generate');
