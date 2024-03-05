@@ -36,13 +36,15 @@ Once all prompts are answered, the password should be generated and displayed in
 
 ## Sneak Peak Demo
 
-
+<img src="./assets/images/password-generator.png" alt="generated password image">
 
 ## Link URL to deployed app on GitHub
 
-
+https://texndo.github.io/module-5-password-generator/ 
 
 ## Link URL to GitHub repository
+
+https://github.com/texndo/module-5-password-generator/tree/main
 
 
 
